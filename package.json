@@ -1,7 +1,7 @@
 {
-  "name": "jate",
+  "name": "JATE",
   "version": "1.0.0",
-  "description": "text editor app for uob bootcamp challlange",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "start:dev": "",

@@ -18,5 +18,8 @@
         "titleBar.inactiveBackground": "#b913e199",
         "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#b913e1"
+    "peacock.color": "#b913e1",
+    "cSpell.words": [
+        "JATE"
+    ]
 }
