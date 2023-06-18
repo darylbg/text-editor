@@ -10,19 +10,21 @@ const { InjectManifest } = require('workbox-webpack-plugin');
 module.exports = () => {
   return {
     mode: 'development',
-    entry: {
-      main: './assets/js/index.js',
-    },
+    entry: './src/js/index.js',
     output: {
-      filename: '[name].bundle.js',
+      filename: 'main.bundle.js',
       path: path.resolve(__dirname, 'dist'),
+    },
+    devServer: {
+      hot: 'only'
     },
     plugins: [
       new HtmlWebpackPlugin({
         template: './index.html',
         title: 'IndexedDB Demo'
       }),
-     
+      new WorkboxPlugin.GenerateSW({}),
+      new WorkboxPlugin.InjectManifest({}),
     ],
 
     module: {
@@ -30,6 +32,10 @@ module.exports = () => {
         {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
         },
         {
           test: /\.m?js$/,
